@@ -1,7 +1,7 @@
 {
     "name":"Lilac",
-    "thumbnail":"lilac.png",
-    "screenshot":"lilac.png",
+    "thumbnail":"thumbnail.png",
+    "screenshot":"lilac-screenshot.jpg",
     "templateType":"standard",
     "pageTypes": ["home"],
     "tags": {
