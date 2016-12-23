@@ -1427,8 +1427,14 @@ button.blog-search-submit-button, .widget.signupform button, .widget.profile but
     .transition(all, 0.5s, ease);
 }
 
+
+
 .widget {
-    &.contactform {
+    &.contactform, &.advancedcontactform {
+        .form-group {
+            margin-bottom: 1.5em;
+        }
+        
         label {
             font-family: @font-swatch3-font-family;
             font-size: bkscale(@font-swatch3-font-size, 0.85);
@@ -1444,12 +1450,13 @@ button.blog-search-submit-button, .widget.signupform button, .widget.profile but
                 }
             }
         }
-        button.btn {
-            padding: 0 20px;
-            margin-top: 10px;
-            @media @mobile {
-                width: 100%;
-            }
+    }
+    &.contactform button, &.contactform button.btn, 
+    &.advancedcontactform button, &.advancedcontactform button.btn {
+        padding: 0 20px;
+        margin-top: 10px;
+        @media @mobile {
+            width: 100%;
         }
     }
     &.profile {
