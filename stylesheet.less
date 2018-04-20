@@ -1,8 +1,9 @@
 @import "@{templateCommon}/basekit-bootstrap.less";
 
 .wrapper {
-  width: 90%;
-  margin: 0 5%;
+	max-width: 1200px;
+	width: 90%;
+	margin: 0 auto;
 }
 
 .canvas  {
@@ -106,13 +107,16 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 .language-selector__inner {
 	.language-selector & {
 		box-sizing: content-box;
-		padding: @language-padding 5%;
+		padding: @language-padding 0;
+		max-width: 1200px;
+		width: 90%;
+		margin: 0 auto;
 		@media @tablet {
 			padding: @language-padding;
 		}
 	}
 	.language-selector.language-selector--horizontal & {
-		padding: 0 5%;
+		padding: 0;
 	}
 	.language-selector.language-selector--dropdown & {
 		&:before {
@@ -139,9 +143,8 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 	}
 	.language-selector.language-selector--dropdown & {
 		box-sizing: border-box;
-		margin: 0 5% 0 0;
+		margin: 0;
 		min-width: auto;
-		max-width: 90%;
 		@media @tablet {
 			margin: 0;
 			width: 100%;
@@ -1887,7 +1890,7 @@ button.blog-search-submit-button, .widget.signupform button, .widget.profile but
     display: inline-block;
     position: absolute;
     right: 0;
-    top: 0px;
+    top: 10px;
     box-shadow: none;
   }
 
@@ -1964,6 +1967,12 @@ button.blog-search-submit-button, .widget.signupform button, .widget.profile but
 
 }
 
+@media @tablet {
+  .widget .extendednavigation a.pull:after {
+    top: 0;
+  }
+}
+
 /* ===============================
    IPHONE WIDTH
    =============================== */
@@ -2004,13 +2013,5 @@ button.blog-search-submit-button, .widget.signupform button, .widget.profile but
 
   .widget.feature h2 {
     margin-bottom: 20px;
-  }
-
-}
-
-@media only screen and (min-width: 1440px) {
-  .wrapper {
-    width: 1200px; /* 1140px - 10% for margins */
-    margin: 0 auto;
   }
 }
