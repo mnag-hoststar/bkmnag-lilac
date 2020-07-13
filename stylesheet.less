@@ -111,24 +111,29 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 		max-width: 1200px;
 		width: 90%;
 		margin: 0 auto;
+		
 		@media @tablet {
 			padding: @language-padding;
 		}
 	}
+	
 	.language-selector.language-selector--horizontal & {
 		padding: 0;
 	}
+	
 	.language-selector.language-selector--dropdown & {
 		&:before {
 			content: "";
 			display: block;
 			height: @language-line-height;
 		}
+		
 		&:after {
 			content: "";
 			display: block;
 			height: @language-padding*2;
 		}
+		
 		@media @mobile {
 			width: 100%;
 		}
@@ -141,6 +146,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 		z-index: 100;
 		min-width: auto;
 	}
+	
 	.language-selector.language-selector--dropdown & {
 		box-sizing: border-box;
 		margin: 0;
@@ -179,6 +185,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 		        background-color: darken(@color-swatch3, 20%);
 			}
 		}
+		
 		.language-selector--dark& {
 		    background-color: @color-swatch7;
 			&:hover {
@@ -207,6 +214,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 			}
 		}
 	}
+	
 	.language-selector.language-selector--dropdown & {
 		&, &--current {
 			.language-selector--light& {
@@ -252,16 +260,19 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 		border: none;
 		hyphens: auto;
 	}
+	
 	// Horizontal - Item
 	.language-selector.language-selector--horizontal & {
 		text-align: right;
 		display: inline-block;
 	}
+	
 	// Dropdown - Item
 	.language-selector.language-selector--dropdown & {
 	    overflow: auto;
 		padding-right: @language-padding*4;
 	}
+	
 	// Link Color
 	.language-selector.language-selector--horizontal &,
 	.language-selector.language-selector--horizontal .language-selector__item--current &,
@@ -286,9 +297,11 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 		box-sizing: content-box;
 		line-height: @language-line-height;
 	}
+	
 	.language-selector.language-selector--flag-text & {
 		margin: 0;
 	}
+	
 	.language-selector.language-selector--dropdown.language-selector--flag-text & {
 		float: left;
 		box-sizing: border-box;
@@ -307,13 +320,16 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 		display: inline-block;
 		padding: @language-padding 0 @language-padding @language-padding;
 	}
+	
 	.language-selector.language-selector--text &,
 	.language-selector.language-selector--flag & {
 		padding: @language-padding 0;
 	}
+	
 	.language-selector.language-selector--text & {
 		display: block;
 	}
+	
 	.language-selector.language-selector--dropdown & {
 		display: block;
 		white-space: nowrap;
@@ -325,6 +341,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 			}
 		}
 	}
+	
 	.language-selector.language-selector--dropdown .language-selector__item &,
 	.language-selector.language-selector--horizontal .language-selector__item &,
 	.language-selector.language-selector--horizontal .language-selector__item:hover &,
@@ -332,12 +349,15 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 	.language-selector.language-selector--horizontal .language-selector__item--current:hover & {
         color: lighten(@color-swatch2, 20%);
 	}
+	
 	.language-selector.language-selector--horizontal.language-selector--dark .language-selector__item & {
         color: @color-swatch3;
 	}
+	
 	.language-selector.language-selector--horizontal.language-selector--dark .language-selector__item--current & {
         color: @color-swatch2;
 	}
+	
 	.language-selector.language-selector--horizontal.language-selector--dark .language-selector__item:hover &,
 	.language-selector.language-selector--horizontal.language-selector--dark .language-selector__item--current:hover & {
         color: lighten(@color-swatch2, 20%);
@@ -408,7 +428,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 }
 
 .widget.profile .twitter time, .widget.profile .twitter span, .widget.profile .twitter span a {
-color: @color-swatch1;
+  color: @color-swatch1;
 }
 
 footer .widget.profile .twitter span {
@@ -536,27 +556,12 @@ footer .widget.profile .twitter span {
 .widget.extendednavigation ul li {
   float: left;
   display: block;
-  text-align: left!important;
+  text-align: left !important;
   &.selected {
-    /* background-color: @color-swatch3; */
     a {
       color: @color-swatch2;
     }
   }
-}
-
-.widget.extendednavigation ul li a,
-.widget.extendednavigation ul li.folder .text {
-  display: block;
-  padding: 20px 30px;
-  text-transform: uppercase;
-  text-shadow: 0px 1px fade(@color-swatch6, 80%);
-  font-family:@font-swatch6-font-family;
-  font-size:@font-swatch6-font-size;
-  font-weight: @font-swatch6-font-weight;
-  color: @font-swatch6-color;
-  line-height:@font-swatch6-line-height;
-  letter-spacing: @font-swatch6-letter-spacing;
 }
 
 .widget.extendednavigation ul li a:hover {
@@ -587,11 +592,49 @@ footer .widget.profile .twitter span {
 /* FOLDER */
 
 .widget.extendednavigation ul li.folder {
-  margin-right: 15px;
-  background-image: image('/images/arrow-down.png');
+  margin-right: 0;
   background-position: right center;
   background-repeat: no-repeat;
   cursor: pointer;
+}
+
+.widget.extendednavigation ul li a,
+.widget.extendednavigation ul li.folder .text {
+  position: relative;
+  display: block;
+  padding: 20px 30px;
+  text-transform: uppercase;
+  text-shadow: 0px 1px fade(@color-swatch6, 80%);
+  font-family:@font-swatch6-font-family;
+  font-size:@font-swatch6-font-size;
+  font-weight: @font-swatch6-font-weight;
+  color: @font-swatch6-color;
+  line-height:@font-swatch6-line-height;
+  letter-spacing: @font-swatch6-letter-spacing;
+}
+
+.widget.extendednavigation ul li.folder .text {
+  padding-right: 40px;
+}
+  
+.widget.extendednavigation ul li.folder .text:after {
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    margin-top: -0.4em;
+    height: 0.4em;
+    width: 0.4em;
+    border: 0.15em solid;
+    border-top: none;
+    border-left: none;
+    display: block;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+    box-shadow: 1px 1px rgba(0,0,0,0.8);
 }
 
 /* DROPDOWN MENU */
@@ -638,10 +681,18 @@ footer .widget.profile .twitter span {
 }
 
 .widget.extendednavigation ul li:hover > ul li .text {
-  /* padding: 10px 20px; */
-  background-image: image('/images/arrow-left.png');
   background-position: left center;
   background-repeat: no-repeat;
+}
+  
+.widget.extendednavigation ul li:hover > ul li .text:after {
+    margin-top: -0.3em;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	box-shadow: 0px 1px rgba(0,0,0,0.8);
 }
 
 
@@ -758,14 +809,12 @@ footer .widget.profile .twitter span {
    =============================== */
 
 
-.widget.content
-{
+.widget.content {
     padding: 0;
     overflow: hidden;
 }
 
-.widget.content span.expand
-{
+.widget.content span.expand {
     font-family: @font-swatch3-font-family;
     background-color: @color-swatch3;
     color: @font-swatch7-color;
@@ -780,8 +829,7 @@ footer .widget.profile .twitter span {
 }
 
 .widget.content span.expand:hover,
-.widget.content span.expand:focus
-{
+.widget.content span.expand:focus {
     cursor: pointer;
     background-color: darken(@color-swatch3,5%);
 }
@@ -791,6 +839,7 @@ footer .widget.profile .twitter span {
         overflow: visible!important;
         height: auto!important;
     }
+    
     .widget.content span.expand {
         display:none!important;
     }
@@ -1463,6 +1512,7 @@ footer .widget.profile .bk-profile-socialicons span a {
   font-family: @font-swatch7-font-family;
   font-size: @font-swatch7-font-size;
   font-weight: @font-swatch7-font-weight;
+  
   &:hover {
     text-decoration: none;
   }
@@ -1699,12 +1749,25 @@ input {
     margin: 0;
 }
 
-button:hover, button.btn:hover, .widget.tweet a:hover, .widget.button.paypal:hover, .widget.blogsearch button:hover, .widget.ecomproduct .ecom-product .btn:hover, .widget.ecombasket .ecombasket-pull:hover {
+button:hover,
+button.btn:hover,
+.widget.tweet a:hover,
+.widget.button.paypal:hover,
+.widget.blogsearch button:hover,
+.widget.ecomproduct .ecom-product .btn:hover,
+.widget.ecombasket .ecombasket-pull:hover {
     background-color: @font-swatch7-background-color-hover;
     .transition(all, 0.5s, ease);
 }
 
-input, .widget.profile form fieldset input, .widget.tweet a, .widget.ecombasket .ecombasket-pull, .widget.paypalbuynow .widget.button.paypal, .widget.ecomproduct .ecom-product .ecom-product-go-to-checkout-btn, .widget.ecombasketsummary .basket-summary-submit, button {
+input,
+.widget.profile form fieldset input,
+.widget.tweet a,
+.widget.ecombasket .ecombasket-pull,
+.widget.paypalbuynow .widget.button.paypal,
+.widget.ecomproduct .ecom-product .ecom-product-go-to-checkout-btn,
+.widget.ecombasketsummary .basket-summary-submit,
+button {
     line-height: 45px;
     height: 45px;
     border-radius: 4px;
@@ -1712,15 +1775,21 @@ input, .widget.profile form fieldset input, .widget.tweet a, .widget.ecombasket 
     -webkit-border-radius: 4px;
 }
 
-.widget.paypalbuynow .widget.button.paypal, .widget.tweet a, .widget.dropbox button {
+.widget.paypalbuynow .widget.button.paypal,
+.widget.tweet a,
+.widget.dropbox button {
     padding: 0 12px 0 40px;
 }
 
-input.blog-search-input, .widget.signupform input, .widget.profile form fieldset input {
+input.blog-search-input,
+.widget.signupform input,
+.widget.profile form fieldset input {
     margin-right: 0;
 }
 
-button.blog-search-submit-button, .widget.signupform button, .widget.profile button {
+button.blog-search-submit-button,
+.widget.signupform button,
+.widget.profile button {
     vertical-align: top;
 }
 
@@ -1743,8 +1812,10 @@ button.blog-search-submit-button, .widget.signupform button, .widget.profile but
             line-height: bkscale(@font-swatch3-line-height, 0.85);
             margin: 16px 0 8px;
         }
+        
         input, textarea {
             border: 1px solid lighten(@color-swatch5, 25%);
+            
             &.email {
                 @media @mobile {
                     width: 100%;
@@ -1752,6 +1823,7 @@ button.blog-search-submit-button, .widget.signupform button, .widget.profile but
             }
         }
     }
+    
     &.contactform button, &.contactform button.btn, 
     &.advancedcontactform button, &.advancedcontactform button.btn {
         padding: 0 20px;
@@ -1760,6 +1832,7 @@ button.blog-search-submit-button, .widget.signupform button, .widget.profile but
             width: 100%;
         }
     }
+    
     &.profile {
         form {
             button {
@@ -1778,6 +1851,7 @@ button.blog-search-submit-button, .widget.signupform button, .widget.profile but
                     width: 100%;
                 }
             }
+            
             fieldset input {
                 border: 1px solid lighten(@color-swatch5, 25%);
                 width: 74%;
@@ -1787,6 +1861,7 @@ button.blog-search-submit-button, .widget.signupform button, .widget.profile but
             }
         }
     }
+    
     &.signupform fieldset {
         button {
             border-radius: 0 4px 4px 0;
@@ -1805,6 +1880,7 @@ button.blog-search-submit-button, .widget.signupform button, .widget.profile but
                 width: 100%;
             }
         }
+        
         input {
             border: 1px solid lighten(@color-swatch5, 25%);
             height: 45px;
@@ -1814,8 +1890,10 @@ button.blog-search-submit-button, .widget.signupform button, .widget.profile but
             }
         }
     }
+    
     &.blogsearch {
         margin: 10px 0;
+        
         input {
             border: 1px solid lighten(@color-swatch5, 25%);
             width: 80%;
@@ -1823,6 +1901,7 @@ button.blog-search-submit-button, .widget.signupform button, .widget.profile but
                 width: 100%;
             }
         }
+        
         button {
             background-color: @font-swatch7-background-color;
             border: 0;
@@ -1849,6 +1928,7 @@ button.blog-search-submit-button, .widget.signupform button, .widget.profile but
             }
         }
     }
+    
     &.button {
         button.btn {
             padding: 0 12px;
@@ -1899,7 +1979,6 @@ button.blog-search-submit-button, .widget.signupform button, .widget.profile but
    =============================== */
 
 @media only screen and (max-width: 1024px) {
-
   .companyheader {
     display: block;
     float: left;
@@ -1910,37 +1989,45 @@ button.blog-search-submit-button, .widget.signupform button, .widget.profile but
   /* NAV */
 
   .widget.extendednavigation .bk-overlay {
-    top: 15px!important;
+    top: 15px !important;
   }
 
   .widget.extendednavigation {
     width: 100%;
     padding: 0;
-    /* border-top: 1px solid lighten(@color-swatch7,8%); */
   }
 
   .widget .extendednavigation {
     display: block;
     width: 100%;
+    height: 100%;
+    overflow: auto;
   }
 
   /* NAV ICON */
 
   .widget .extendednavigation a.pull {
-    display: block;
-    top: 12px;
-  }
-
-  .widget .extendednavigation a.pull:after {
-    content:"";
-    background: image('/images/nav-icon.png') no-repeat;
-    width: 38px;
-    height: 38px;
-    display: inline-block;
     position: absolute;
+    top: 13px;
     right: 0;
-    top: 10px;
-    box-shadow: none;
+    display: block;
+    width: 36px;
+    height: 36px;
+    overflow: visible;
+    border: 1px solid fade(@color-swatch3, 40%);
+    border-radius: 6px;
+  }
+  
+  .widget .extendednavigation a.pull:after {
+    content: "";
+    position: absolute;
+    top: 16px;
+    right: 7px;
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: @color-swatch2;
+    box-shadow: 0 -7px @color-swatch2, 0 7px @color-swatch2;
   }
 
   /* NAV */
@@ -1951,48 +2038,52 @@ button.blog-search-submit-button, .widget.signupform button, .widget.profile but
     padding-bottom: 30px;
   }
 
-  .widget .extendednavigation ul li {
+  div.widget .extendednavigation ul li {
     width: 100%;
     border-bottom: 1px solid @color-swatch3;
+    float: left;
   }
 
   .widget.extendednavigation {
     display: block;
     margin-left: 0;
     vertical-align: top;
+    
     ul li {
       padding: 0;
     }
   }
 
-  .widget.extendednavigation ul li a, .widget.extendednavigation ul li.folder .text {
-    padding: 12px 0;
+  .widget.extendednavigation ul li a,
+  .widget.extendednavigation ul li.folder .text {
+    padding: 12px 50px 12px 20px;
   }
 
-  .widget.extendednavigation ul li .text, .widget.extendednavigation ul li.folder .text {
-    padding-left: 20px;
-    background-image: image('/images/arrow-left.png');
+  .widget.extendednavigation ul li .text,
+  .widget.extendednavigation ul li.folder .text {
     background-position: left center;
     background-repeat: no-repeat;
   }
+  
 
   .widget.extendednavigation ul li > ul {
-    display: none!important;
+    display: none !important;
   }
 
   .widget.extendednavigation ul li:hover > ul {
-    display: block!important;
-    width: 100%;
+    position: static;
+    display: block !important;
+    width: auto;
+    max-width: none;
   }
 
-  .widget.extendednavigation ul li:hover > ul li {
-    padding: 10px 30px;
+  .widget.extendednavigation ul li.folder > ul li {
+    padding-left: 20px;
+    text-align: left !important;
   }
 
-  .widget.extendednavigation ul li:hover > ul li .text, .widget.extendednavigation ul li:hover > ul li.folder .text {
-    background-image: image('/images/arrow-left-wh.png');
-    background-position: left center;
-    background-repeat: no-repeat;
+  .widget.extendednavigation ul li.folder > ul li:last-child {
+    border-bottom: none;
   }
 
   /* FEATURE */
@@ -2012,13 +2103,6 @@ button.blog-search-submit-button, .widget.signupform button, .widget.profile but
 
  .widget.feature .feature-bgimg .content {
     height: auto;
-  }
-
-}
-
-@media @tablet {
-  .widget .extendednavigation a.pull:after {
-    top: 0;
   }
 }
 
