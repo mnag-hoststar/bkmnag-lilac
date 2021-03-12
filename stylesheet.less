@@ -442,6 +442,7 @@ footer .widget.profile .twitter span {
 .bk-header {
   padding: 0;
   background-color: @color-swatch7;
+  min-height: 62px;
 }
 
 .companyheader {
@@ -1509,8 +1510,10 @@ footer .widget.profile .bk-profile-socialicons span a {
 //Shop View
 .widget.ecomproductslist .ecom-productslist-product {
     width: 30.33%;
+    @media @mobile {
+      width: auto;
+    }
 }
-
 
 // Ecom Basket Summary
 
