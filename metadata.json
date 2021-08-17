@@ -3,6 +3,7 @@
     "thumbnail":"thumbnail.png",
     "screenshot":"lilac-screenshot.jpg",
     "templateType":"standard",
+    "versionTenCompatible": 1,
     "pageTypes": ["home"],
     "tags": {
     "en": ["minimal", "clean", "photography", "vintage", "modern", "dark", "studio", "website", "creative", "elegant", "professional", "unique", "floral", "sans-serif"],
@@ -17,7 +18,7 @@
             "color3":"#a68c73",
             "color4":"#64515e",
             "color5":"#afa2ad",
-            "color6":"#000000",
+            "color6":"#37192e",
             "color7":"#5a334e"
         },
         "Swatch 2": {

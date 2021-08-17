@@ -14,6 +14,63 @@
   padding: 0 0 60px;
 }
 
+h1, h2, h3, h4, h5, h6,
+[class*="contentgroup__h"],
+.blog-post-item .blog-post-title a,
+.contactform label, .advancedcontactform label,
+.widget.twitter span.bk-full-name,
+.widget.twitter a:hover span.bk-full-name,
+a,
+[data-name="content"] a:not(.contentgroup__link) {
+  .style--light & {
+      color: @contrast--light;
+  }
+
+  .style--accent & {
+      color: @contrast--accent;
+  }
+
+  .style--dark & {
+      color: @contrast--dark;
+  }
+}
+
+p,
+ul, ol, li,
+label,
+.contentgroup__body,
+.contactform label, 
+.advancedcontactform label,
+.twitter ul li a,
+.twitter ul li time,
+.signupform label,
+.widget.ecomproduct .ecom-product .ecom-product-info .ecom-product-variation select,
+.widget.twitter p,
+.widget.twitter p a,
+.widget.twitter .twitter-content p a,
+select,
+blockquote,
+blockquote:before {
+  font-family:@font-swatch5-font-family;
+  font-weight: @font-swatch5-font-weight;
+  color:@font-swatch5-color;
+  line-height:@font-swatch5-line-height;
+  letter-spacing: @font-swatch5-letter-spacing;
+  font-size: @font-swatch5-font-size;
+
+  .style--light & {
+      color: fade(@contrast--light, 75%);
+  }
+
+  .style--accent & {
+      color: fade(@contrast--accent, 75%);
+  }
+
+  .style--dark & {
+      color: fade(@contrast--dark, 75%);
+  }
+}
+
 blockquote {
     margin: 30px 0;
     quotes: "\201C""\201D""\2018""\2019";
@@ -23,7 +80,8 @@ blockquote {
     line-height: @font-swatch5-line-height;
     color: @font-swatch5-color;
 }
-  blockquote:before {
+
+blockquote:before {
   font-family: georgia;
   color: @color-swatch2;
   content:open-quote;
@@ -32,13 +90,15 @@ blockquote {
   margin-right:.1em;
   vertical-align:-.4em;
 }
-  blockquote p, ol, li, ul {
+
+blockquote p, ol, li, ul {
   font-family:@font-swatch5-font-family;
   font-size:@font-swatch5-font-size;
   font-weight:@font-swatch5-font-weight;
   line-height:@font-swatch5-line-height;
   color:@font-swatch5-color;
 }
+
 
 /* ===============================
    CUSTOM CSS
@@ -246,7 +306,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 				font-size: @font-swatch6-font-size;
                 color: lighten(@color-swatch2, 20%);
 				text-align: center;
-                text-shadow: 0px 1px fade(@color-swatch6, 80%);
+                text-shadow: 0px 1px fade(#000, 80%);
 			}
 		}
 	}
@@ -313,7 +373,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 .language-selector__name,
 .language-selector__localised-name {
 	.language-selector & {
-        text-shadow: 0px 1px fade(@color-swatch6, 80%);
+        text-shadow: 0px 1px fade(#000, 80%);
 	}
 	
 	.language-selector.language-selector--flag-text & {
@@ -454,7 +514,7 @@ footer .widget.profile .twitter span {
 .companyname a {
   text-decoration: none;
   text-transform: uppercase;
-  text-shadow: 0px 1px fade(@color-swatch6, 80%);
+  text-shadow: 0px 1px fade(#000, 80%);
   font-family:@font-swatch10-font-family;
   font-weight: @font-swatch10-font-weight;
   color:@font-swatch10-color;
@@ -605,7 +665,7 @@ footer .widget.profile .twitter span {
   display: block;
   padding: 20px 30px;
   text-transform: uppercase;
-  text-shadow: 0px 1px fade(@color-swatch6, 80%);
+  text-shadow: 0px 1px fade(#000, 80%);
   font-family:@font-swatch6-font-family;
   font-size:@font-swatch6-font-size;
   font-weight: @font-swatch6-font-weight;
@@ -652,14 +712,12 @@ footer .widget.profile .twitter span {
   background-color: @color-swatch7;
   border-top: 1px solid @color-swatch7;
   z-index: 500;
-  /* padding: 15px 0; */
 }
 
 .widget.extendednavigation li:hover > ul > li {
   display: block;
   width: 100%;
   text-align: center!important;
-  /* padding: 10px 0; */
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;         /* Opera/IE 8+ */
@@ -709,7 +767,7 @@ footer .widget.profile .twitter span {
    FEATURE
    =============================== */
 
- .widget.feature {
+.widget.feature {
   width: 100%;
   padding: 0;
 }
@@ -731,7 +789,7 @@ footer .widget.profile .twitter span {
 
 .widget.feature h2 {
   display: inline-block;
-  text-shadow: 0px 1px 1px fade(@color-swatch6, 20%);
+  text-shadow: 0px 1px 1px fade(#000, 20%);
   font-family:@font-swatch8-font-family;
   font-size:@font-swatch8-font-size;
   font-weight: @font-swatch8-font-weight;
@@ -761,7 +819,7 @@ footer .widget.profile .twitter span {
     line-height:@font-swatch9-line-height;
     color: @font-swatch9-color;
     letter-spacing: @font-swatch9-letter-spacing;
-    text-shadow: 0px 1px 1px fade(@color-swatch6, 20%);
+    text-shadow: 0px 1px 1px fade(#000, 20%);
     span {
         background-color: fade(@color-swatch7, 50%);
         padding: 5px 10px;
@@ -778,10 +836,6 @@ footer .widget.profile .twitter span {
     max-width: 100%;
     border: 0;
     border-width: 0;
-}
-
-.widget.image {
-
 }
 
 .widget.image span.image-title {
@@ -822,9 +876,6 @@ footer .widget.profile .twitter span {
     font-size: @font-swatch5-font-size;
     padding: 4px 8px;
     margin: 4px 0;
-    /*-webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;*/
     cursor: pointer;
     display: inline-block;
 }
@@ -847,39 +898,6 @@ footer .widget.profile .twitter span {
 }
 
 /* ===============================
-   IMAGE WIDGET
-   =============================== */
-
-.widget.image img
-{
-    display:block;
-    max-width: 100%;
-}
-
-.widget.image {
-}
-
-.widget.image span.image-title {
-    display: block;
-    margin:5px;
-    font-family: @font-swatch4-font-family;
-    font-weight: @font-swatch4-font-weight;
-    font-size: @font-swatch4-font-size;
-    text-align: center;
-    line-height: @font-swatch4-line-height;
-}
-
-.widget.image span.image-description {
-    display: block;
-    margin:5px;
-    text-align: center;
-    font-family: @font-swatch5-font-family;
-    font-weight: @font-swatch5-font-weight;
-    font-size: @font-swatch5-font-size;
-    line-height: @font-swatch5-line-height;
-}
-
-/* ===============================
    DIVIDER WIDGET
    =============================== */
 
@@ -892,6 +910,18 @@ hr.line {
    height: 1px;
    width: 100%;
    border: none;
+
+   .style--light & {
+        background-color: darken(@color--light, 25%);
+    }
+
+    .style--accent & {
+        background-color: darken(@color--accent, 25%);
+    }
+
+    .style--dark & {
+        background-color: lighten(@color--dark, 20%);
+    }
 }
 
 hr.line.align-left {
@@ -921,6 +951,10 @@ hr.line.align-right {
             font-family: @font-swatch5-font-family;
             line-height: @font-swatch5-line-height;
             font-size: @font-swatch5-font-size;
+            margin-top: 4px;
+            &:last-child {
+                font-weight: inherit;
+            }
         } 
         ul {
             li {
@@ -973,20 +1007,38 @@ hr.line.align-right {
                 text-decoration: none;
             }
         }
-        p {
-            color: @color-swatch5;
-            margin-top: 4px;
-            &:last-child {
-                font-weight: inherit;
-            }
-        }
         // Extra Info
         span, span a, p:last-child {
             font-size: 13px;
             color: @color-swatch3;
             font-weight: inherit;
+
+            .style--light & {
+						  color: @color--accent;
+						}
+
+						.style--accent & {
+						  color: @color--dark;
+						}
+
+						.style--dark & {
+						  color: @color--accent;
+						}
+
             &:hover {
                 color: darken(@color-swatch3, 15%);
+
+                .style--light & {
+								  color: darken(@color--accent, 15%);
+								}
+
+								.style--accent & {
+								  color: darken(@color--dark, 15%);
+								}
+
+								.style--dark & {
+								  color: darken(@color--accent, 15%);
+								}
             }
         }
     }
@@ -1095,9 +1147,34 @@ footer .widget.profile .bk-profile-socialicons span a {
             -moz-border-radius: 50%;
             border-radius: 50%;
             cursor: pointer;
+
+            .style--light & {
+						  background-color: darken(@color--light, 10%);
+						}
+
+						.style--accent & {
+						  background-color: darken(@color--accent, 10%);
+						}
+
+						.style--dark & {
+						  background-color: lighten(@color--dark, 10%);
+						}
+
             &.selected {
                 border: 0;
                 background-color: @font-swatch7-background-color;
+
+                .style--light & {
+								  background-color: @color--accent;
+								}
+
+								.style--accent & {
+								  background-color: @color--dark;
+								}
+
+								.style--dark & {
+								  background-color: @color--accent;
+								}
             }
         }
     }
@@ -1175,6 +1252,18 @@ footer .widget.profile .bk-profile-socialicons span a {
     &.blogpostlist {
         .blog-post-item {
             border-bottom: 1px dotted @color-swatch5;
+
+            .style--light & {
+						  border-color: darken(@color--light, 10%);
+						}
+
+						.style--accent & {
+						  border-color: darken(@color--accent, 10%);
+						}
+
+						.style--dark & {
+						  border-color: darken(@color--dark, 10%);
+						}
         }
     }
 }
@@ -1385,6 +1474,25 @@ footer .widget.profile .bk-profile-socialicons span a {
         text-overflow: '';
         color: darken(@color-swatch5,5%);
         cursor: pointer;
+
+        .style--light & {
+				  background-color: darken(@color--light, 4%);
+				  border-color: darken(@color--light, 10%);
+				  color: darken(@contrast--light, 5%);
+				}
+
+				.style--accent & {
+				  background-color: darken(@color--accent, 4%);
+				  border-color: darken(@color--accent, 10%);
+				  color: darken(@contrast--accent, 5%);
+				}
+
+				.style--dark & {
+				  background-color: lighten(@color--dark, 6%);
+				  border-color: lighten(@color--dark, 12%);
+				  color: lighten(@contrast--dark, 5%);
+				}
+
         &:focus {
             outline: 0;
         }
@@ -1415,7 +1523,6 @@ footer .widget.profile .bk-profile-socialicons span a {
 .widget.ecomproductslist .productlist-filter .productlist-display-form {
     .form-group {
         display: inline-block;
-        //float: left;
         margin: 0 5px 0 0;
         @media @tablet {
             margin-bottom: 0;
@@ -1446,6 +1553,24 @@ footer .widget.profile .bk-profile-socialicons span a {
             -webkit-appearance: none;
             -moz-appearance: none;
             -webkit-border-radius: 0;
+
+            .style--light & {
+						  background-color: darken(@color--light, 4%);
+						  border-color: darken(@color--light, 10%);
+						  color: darken(@contrast--light, 5%);
+						}
+
+						.style--accent & {
+						  background-color: darken(@color--accent, 4%);
+						  border-color: darken(@color--accent, 10%);
+						  color: darken(@contrast--accent, 5%);
+						}
+
+						.style--dark & {
+						  background-color: lighten(@color--dark, 6%);
+						  border-color: lighten(@color--dark, 12%);
+						  color: lighten(@contrast--dark, 5%);
+						}
             @media only screen and (max-width: 650px) {
                 width: 75%;
                 max-width: 100%;
@@ -1475,8 +1600,21 @@ footer .widget.profile .bk-profile-socialicons span a {
     }
 }
 
-.widget.ecomproductslist .ecom-productslist-image-wrap {
+.widget.ecomproductslist .ecom-productslist-image-wrap,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap .ecom-featuredproducts-product .ecom-featuredproducts-image-wrap {
     background-position: left center;
+
+    .style--light & {
+        background-color: @color--light;
+    }
+
+    .style--accent & {
+        background-color: @color--accent;
+    }
+
+    .style--dark & {
+        background-color: @color--dark;
+    }
 }
 
 .ecom-productslist-title,
@@ -1677,10 +1815,8 @@ footer .widget.profile .bk-profile-socialicons span a {
     width: 100%;
 }
 
-.blog-search-form {
-    label {
-        display: block;
-    }
+.blog-search-form label {
+  display: block;
 }
 
 .blog-post-sharing {
@@ -1706,12 +1842,44 @@ input, textarea {
     -webkit-border-radius: 4px; 
     border-radius: 4px;
     padding: 12px;
+
+    .style--light & {
+		  background-color: darken(@color--light, 4%);
+		  border-color: darken(@color--light, 10%);
+		  color: darken(@contrast--light, 5%);
+		}
+
+		.style--accent & {
+		  background-color: darken(@color--accent, 4%);
+		  border-color: darken(@color--accent, 10%);
+		  color: darken(@contrast--accent, 5%);
+		}
+
+		.style--dark & {
+		  background-color: lighten(@color--dark, 6%);
+		  border-color: lighten(@color--dark, 12%);
+		  color: lighten(@contrast--dark, 5%);
+		}
+
     @media @mobile {
         font-size: bkscale(@font-swatch5-font-size, 0.9);
     }
+
     &:hover, &:focus {
         border: 1px solid lighten(@color-swatch5, 15%)!important;
         transition: ease .5s border!important;
+
+        .style--light & {
+				  border-color: darken(@color--light, 15%);
+				}
+
+				.style--accent & {
+				  border-color: darken(@color--accent, 15%);
+				}
+
+				.style--dark & {
+				  border-color: lighten(@color--dark, 17%);
+				}
     }
 }
 
@@ -1731,6 +1899,24 @@ select {
   transition: border .2s;
   border-radius: 0;
   height: 45px;
+
+  .style--light & {
+	  background-color: darken(@color--light, 4%);
+	  border-color: darken(@color--light, 10%);
+	  color: darken(@contrast--light, 5%);
+	}
+
+	.style--accent & {
+	  background-color: darken(@color--accent, 4%);
+	  border-color: darken(@color--accent, 10%);
+	  color: darken(@contrast--accent, 5%);
+	}
+
+	.style--dark & {
+	  background-color: lighten(@color--dark, 6%);
+	  border-color: lighten(@color--dark, 12%);
+	  color: lighten(@contrast--dark, 5%);
+	}
 }
 
 input {
@@ -1758,15 +1944,63 @@ input {
     margin: 0;
 }
 
-button:hover,
+.widget.button button,
+.btn,
+button.btn,
+.widget.tweet a,
+.widget.button.paypal,
+.widget.blogsearch button,
+.widget.ecomproduct .ecom-product .btn,
+.widget.ecombasket .ecombasket-pull,
+.widget.paypalbuynow .widget.button.paypal,
+.widget.socialicons span a,
+a.contentgroup__link {
+    background-color: @font-swatch7-background-color-hover;
+    .transition(all, 0.5s, ease);
+
+    .style--light & {
+		  background-color: @color--accent;
+		  color: @contrast--accent;
+		}
+
+		.style--accent & {
+		  background-color: @color--dark;
+		  color: @contrast--dark;
+		}
+
+		.style--dark & {
+		  background-color: @color--accent;
+		  color: @contrast--accent;
+		}
+}
+
+.widget.button button:hover,
+.btn:hover,
 button.btn:hover,
 .widget.tweet a:hover,
 .widget.button.paypal:hover,
 .widget.blogsearch button:hover,
 .widget.ecomproduct .ecom-product .btn:hover,
-.widget.ecombasket .ecombasket-pull:hover {
+.widget.ecombasket .ecombasket-pull:hover,
+.widget.paypalbuynow .widget.button.paypal:hover,
+.widget.socialicons span a:hover {
     background-color: @font-swatch7-background-color-hover;
     .transition(all, 0.5s, ease);
+
+    .style--light & {
+		  background-color: darken(@color--accent, 10%);
+		  color: @contrast--accent;
+		}
+
+		.style--accent & {
+		  background-color: lighten(@color--dark, 10%);
+		  color: @contrast--dark;
+		}
+
+		.style--dark & {
+		  background-color: darken(@color--accent, 10%);
+		  color: @contrast--accent;
+		}
 }
 
 input,
@@ -1803,7 +2037,6 @@ button.blog-search-submit-button,
 }
 
 .widget.paypalbuynow .widget.button.paypal:hover {
-    background-color: @font-swatch7-background-color-hover;
     border: none!important;
     .transition(all, 0.5s, ease);
 }
@@ -1821,18 +2054,32 @@ button.blog-search-submit-button,
             line-height: bkscale(@font-swatch3-line-height, 0.85);
             margin: 16px 0 8px;
         }
+    }
+
+    &.contactform, &.advancedcontactform, &.signupform, &.blogsearch  {
+ 			input, textarea {
+        border: 1px solid lighten(@color-swatch5, 25%);
+
+        .style--light & {
+				  border-color: darken(@color--light, 20%);
+				}
+
+				.style--accent & {
+				  border-color: darken(@color--accent, 20%);
+				}
+
+				.style--dark & {
+				  border-color: lighten(@color--dark, 20%);
+				}
         
-        input, textarea {
-            border: 1px solid lighten(@color-swatch5, 25%);
-            
-            &.email {
-                @media @mobile {
-                    width: 100%;
-                }
+        &.email {
+            @media @mobile {
+                width: 100%;
             }
         }
+  		}
     }
-    
+
     &.contactform button, &.contactform button.btn, 
     &.advancedcontactform button, &.advancedcontactform button.btn {
         padding: 0 20px;
@@ -1891,7 +2138,6 @@ button.blog-search-submit-button,
         }
         
         input {
-            border: 1px solid lighten(@color-swatch5, 25%);
             height: 45px;
             width: 79%;
             @media @mobile {
@@ -1904,7 +2150,6 @@ button.blog-search-submit-button,
         margin: 10px 0;
         
         input {
-            border: 1px solid lighten(@color-swatch5, 25%);
             width: 80%;
             @media @mobile {
                 width: 100%;
@@ -1976,11 +2221,66 @@ button.blog-search-submit-button,
 		
 		.form__link {
 			font-family:@font-swatch3-font-family;
-            font-size: bkscale(@font-swatch3-font-size, 0.85);
+      font-size: bkscale(@font-swatch3-font-size, 0.85);
 			font-weight:@font-swatch3-font-weight;
 			letter-spacing: @font-swatch3-letter-spacing;
 		}
 	}
+}
+
+
+/* PLACEHOLDER CSS */
+::-webkit-input-placeholder { /* WebKit browsers */
+  .style--light & {
+    color: @contrast--light;
+  }
+
+  .style--accent & {
+    color: @contrast--accent;
+  }
+
+  .style--dark & {
+    color: @contrast--dark;
+  }
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  .style--light & {
+    color: @contrast--light;
+  }
+
+  .style--accent & {
+    color: @contrast--accent;
+  }
+
+  .style--dark & {
+    color: @contrast--dark;
+  }
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  .style--light & {
+    color: @contrast--light;
+  }
+
+  .style--accent & {
+    color: @contrast--accent;
+  }
+
+  .style--dark & {
+    color: @contrast--dark;
+  }
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+	.style--light & {
+    color: @contrast--light;
+  }
+
+  .style--accent & {
+    color: @contrast--accent;
+  }
+
+  .style--dark & {
+    color: @contrast--dark;
+  }
 }
 
 /* ===============================
