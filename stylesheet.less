@@ -549,8 +549,6 @@ footer .widget.profile .twitter span {
     }
 }
 
-
-
 /* ===============================
    EXTENDED NAVIGATION
    =============================== */
@@ -650,11 +648,11 @@ footer .widget.profile .twitter span {
     border-top: none;
     border-left: none;
     display: block;
-	-webkit-transform: rotate(45deg);
-	-moz-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
-	-o-transform: rotate(45deg);
-	transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
     box-shadow: 1px 1px rgba(0,0,0,0.8);
 }
 
@@ -679,7 +677,6 @@ footer .widget.profile .twitter span {
   display: block;
   width: 100%;
   text-align: center!important;
-  /* padding: 10px 0; */
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;         /* Opera/IE 8+ */
@@ -800,10 +797,6 @@ footer .widget.profile .twitter span {
     border-width: 0;
 }
 
-.widget.image {
-
-}
-
 .widget.image span.image-title {
     display: block;
     margin: 5px;
@@ -870,13 +863,9 @@ footer .widget.profile .twitter span {
    IMAGE WIDGET
    =============================== */
 
-.widget.image img
-{
+.widget.image img {
     display:block;
     max-width: 100%;
-}
-
-.widget.image {
 }
 
 .widget.image span.image-title {
@@ -1055,7 +1044,9 @@ footer .widget.profile .bk-profile-socialicons span a {
         background: rgba(0,0,0,0.5);
     }
     .slideshow-widget {
+
         /* Arrows */
+
         .btn-prev,
         .btn-next {
             font-size: 0;
@@ -1072,6 +1063,7 @@ footer .widget.profile .bk-profile-socialicons span a {
                 height: 30px;
             }
         }
+
         .btn-prev {
             &:after {
                 content: "\2190";
@@ -1082,6 +1074,7 @@ footer .widget.profile .bk-profile-socialicons span a {
                 }
             }
         }
+
         .btn-next {
             &:after {
                 content: "\2192";
@@ -1092,12 +1085,15 @@ footer .widget.profile .bk-profile-socialicons span a {
                 }
             }
         }
+
         /* Play Button */
+
         .btn-play {
             background: rgba(0,0,0,0.5);
             -webkit-border-radius: 4px;
             -moz-border-radius: 4px;
             border-radius: 4px;
+            
             &:after {
                 color: #fff;
                 letter-spacing: -4px;
@@ -1105,7 +1101,9 @@ footer .widget.profile .bk-profile-socialicons span a {
             }
         }
     }
+
     /* Slideshow Controls */
+
     .slideshow-widget-controls {
         .dot {
             width: 9px;
@@ -1115,6 +1113,7 @@ footer .widget.profile .bk-profile-socialicons span a {
             -moz-border-radius: 50%;
             border-radius: 50%;
             cursor: pointer;
+
             &.selected {
                 border: 0;
                 background-color: @font-swatch7-background-color;
@@ -1141,6 +1140,7 @@ footer .widget.profile .bk-profile-socialicons span a {
     right: 0;
     bottom: 0;
     margin: auto;
+
     @media @mobile {
         width: 30px;
         height: 30px;
@@ -1149,7 +1149,8 @@ footer .widget.profile .bk-profile-socialicons span a {
 }
 
 .widget.responsiveslideshow .slideshow-widget .btn-play:after {
-    top:-7px;
+    top: -7px;
+
     @media @mobile {
         top: -13px;
     }
@@ -1166,6 +1167,7 @@ footer .widget.profile .bk-profile-socialicons span a {
         font-size: bkscale(@font-swatch4-font-size, 1.1);
         margin-bottom: 0.3em;
     }
+
     .description {
         color: @color-swatch1;
     }
@@ -1182,7 +1184,8 @@ footer .widget.profile .bk-profile-socialicons span a {
 }
 
 .widget.gallery .inner:hover .image-data {
-    .transition( opacity, 0.5s, ease );
+    .transition(opacity, 0.5s, ease);
+
     opacity: 1;
 }
 
@@ -1202,6 +1205,7 @@ footer .widget.profile .bk-profile-socialicons span a {
 .blog-post-item {
     margin: 1.5em 0;
     padding-bottom: 1em;
+
     h2 {
         a {
             font-family: @font-swatch2-font-family;
@@ -1237,7 +1241,6 @@ footer .widget.profile .bk-profile-socialicons span a {
 /* ===============================
    MENU 
    =============================== */
-
 
 .widget {
     &.menusections {
@@ -1372,8 +1375,6 @@ footer .widget.profile .bk-profile-socialicons span a {
         color: @font-swatch2-color;
         margin-bottom: 0.25em;
     }
-    .menu-item-description {
-    }
     .menu-item-price p {
         color: @color-swatch3;
         font-size: bkscale(@font-swatch5-font-size, 1.12);
@@ -1387,6 +1388,7 @@ footer .widget.profile .bk-profile-socialicons span a {
 .productlist-filter {
     label {
         display: block;
+
         &:last-child {
             display: none;
         }
@@ -1419,7 +1421,9 @@ footer .widget.profile .bk-profile-socialicons span a {
           width: 100%;
         }
     }
+
     // Label
+
     label {
         font-family: @font-swatch2-font-family;
         font-size: 14px;
@@ -1427,7 +1431,9 @@ footer .widget.profile .bk-profile-socialicons span a {
         line-height: @font-swatch4-line-height;
         font-weight: normal;
     }
+
     // Product Search
+
     .productlist-search {
         display: flex;
         flex-wrap: wrap;
@@ -1741,6 +1747,7 @@ input {
     font-size: @font-swatch7-font-size;
     font-weight: @font-swatch7-font-weight;
     -webkit-font-smoothing: inherit;
+
     &:hover {
         text-decoration: none;
     }
@@ -1831,6 +1838,7 @@ button.blog-search-submit-button,
     &.advancedcontactform button, &.advancedcontactform button.btn {
         padding: 0 20px;
         margin-top: 10px;
+
         @media @mobile {
             width: 100%;
         }
@@ -1935,6 +1943,7 @@ button.blog-search-submit-button,
     &.button {
         button.btn {
             padding: 0 12px;
+
             &:hover {
                 background-color: @font-swatch7-background-color-hover;
             }
@@ -1970,7 +1979,7 @@ button.blog-search-submit-button,
 		
 		.form__link {
 			font-family:@font-swatch3-font-family;
-            font-size: bkscale(@font-swatch3-font-size, 0.85);
+      font-size: bkscale(@font-swatch3-font-size, 0.85);
 			font-weight:@font-swatch3-font-weight;
 			letter-spacing: @font-swatch3-letter-spacing;
 		}
@@ -2050,7 +2059,6 @@ button.blog-search-submit-button,
   .widget.extendednavigation {
     display: block;
     margin-left: 0;
-    vertical-align: top;
     
     ul li {
       padding: 0;
