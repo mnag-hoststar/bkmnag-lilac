@@ -28,6 +28,10 @@
   padding: 0 0 60px;
 }
 
+h1, h2, h3, h4, h5, h6, a, p, ol, ul {
+	word-break: break-word;
+}
+
 blockquote {
     margin: 30px 0;
     quotes: "\201C""\201D""\2018""\2019";
@@ -36,6 +40,7 @@ blockquote {
     font-weight: @font-swatch5-font-weight;
     line-height: @font-swatch5-line-height;
     color: @font-swatch5-color;
+    word-break: break-word;
 }
   blockquote:before {
   font-family: georgia;
@@ -52,6 +57,7 @@ blockquote {
   font-weight:@font-swatch5-font-weight;
   line-height:@font-swatch5-line-height;
   color:@font-swatch5-color;
+  word-break: break-word;
 }
 
 /* ===============================
@@ -1807,6 +1813,7 @@ button.blog-search-submit-button,
             font-weight: @font-swatch3-font-weight;
             line-height: bkscale(@font-swatch3-line-height, 0.85);
             margin: 16px 0 8px;
+            word-break: break-all;
         }
         
         input, textarea {
