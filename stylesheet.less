@@ -548,6 +548,21 @@ footer .widget.profile .twitter span {
     min-height: 150px;
     color: @color-swatch1;
 
+    .widget.profile {
+        form fieldset input {
+            width: 100%;
+        }
+
+        form button {
+            word-break: break-word;
+            height: auto;
+            min-height: 45px;
+            width: auto;
+            margin: 10px 0;
+            line-height: 1.25em;
+            border-radius: 4px;
+        }
+    }
 }
 
 .bk-footer h2 {
@@ -1960,32 +1975,45 @@ button.blog-search-submit-button,
             }
         }
     }
-    
+
     &.signupform fieldset {
-        button {
-            border-radius: 0 4px 4px 0;
-            -moz-border-radius: 0 4px 4px 0;
-            -webkit-border-radius: 0 4px 4px 0;
-            width: 20%;
-            padding: 0 12px;
-            position: relative;
-            vertical-align: top;
-            padding: inherit;
+        .form-group {
+            display: flex;
+
             @media @mobile {
-                border-radius: 4px;
-                -moz-border-radius: 4px;
-                -webkit-border-radius: 4px;
-                margin-top: 10px;
-                width: 100%;
+                display: block;
             }
-        }
-        
-        input {
-            border: 1px solid lighten(@color-swatch5, 25%);
-            height: 45px;
-            width: 79%;
-            @media @mobile {
-                width: 100%;
+
+            label {
+                display: none;
+            }
+    
+            input {
+                border: 1px solid lighten(@color-swatch5, 25%);
+                height: auto;
+                min-height: 45px;
+                width: 75%;
+                border-radius: 4px 0 0 4px;
+    
+                @media @mobile {
+                    border-radius: 4px;
+                    width: 100%;
+                }
+            }
+    
+            button {
+                border-radius: 0 4px 4px 0;
+                width: 25%;
+                padding: 8px 12px;
+                position: relative;
+                vertical-align: top;
+                padding: inherit;
+    
+                @media @mobile {
+                    border-radius: 4px;
+                    margin-top: 10px;
+                    width: 100%;
+                }
             }
         }
     }
