@@ -1532,13 +1532,19 @@ footer .widget.profile .bk-profile-socialicons span a {
 
             @media @mobile {
                 flex-grow: 1;
-          }
+                border-radius: 4px;
+            }
+
+            .responsivecolumns & {
+                flex-grow: 1;
+                border-radius: 0 4px 4px 0;
+
+                @media @mobile {
+                    border-radius: 4px;
+                }
+            }
         }
     }
-}
-
-.widget.ecomproductslist .ecom-productslist-image-wrap {
-    background-position: left center;
 }
 
 .ecom-productslist-title,
@@ -1570,12 +1576,61 @@ footer .widget.profile .bk-profile-socialicons span a {
 }
 
 //Shop View
-.widget.ecomproductslist .ecom-productslist-product {
-    width: 30.33%;
-    @media @mobile {
-      width: auto;
+
+.widget.ecomproductslist {
+    .ecom-productslist-products {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -10px;
+        max-width: none;
+        
+        @media @mobile {
+            display: block;
+        }
+    }
+    
+    .productlist-filter {
+        margin: 0 10px;
+        width: 100%;
+        
+        @media @mobile {
+            width: auto;
+        }
+        
+        label {
+            display: block;
+
+            &:last-child {
+                display: none;
+            }
+        }
+    }
+
+    .ecom-productslist-product {
+        width: 100%/3;
+        margin: 0 0 60px;
+        padding: 0 10px;
+
+        @media @tablet {
+            width: 100%/2;
+        }
+        
+        @media @mobile {
+            width: 100%;
+        }
+        
+        .responsivecolumns & {
+            width: 100%;
+        }
+    }
+
+    .ecom-productslist-image-wrap {
+        background-position: center;
+        margin-bottom: 30px;
     }
 }
+
+
 
 // Ecom Basket Summary
 
@@ -1608,7 +1663,7 @@ footer .widget.profile .bk-profile-socialicons span a {
         }
 
         tr:first-child {
-    tr:first-child { 
+            @media @mobile {
                 display: table-header-group;
                 
                 th:nth-child(2) {
@@ -1791,11 +1846,10 @@ select {
     background-color: darken(@color-swatch1, 5%);
     border: 1px solid lighten(@color-swatch5, 25%);
     -webkit-appearance: none;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px; 
     border-radius: 4px;
     padding: 12px;
-    height: 50px;
+    height: auto;
+    min-height: 50px;
 
     @media @mobile {
         font-size: bkscale(@font-swatch5-font-size, 0.9);
@@ -1871,17 +1925,17 @@ input,
 .widget.ecomproduct .ecom-product .ecom-product-go-to-checkout-btn,
 .widget.ecombasketsummary .basket-summary-submit,
 button {
-    line-height: 45px;
-    height: 45px;
+    line-height: 1.2em;
+    height: auto;
+    min-height: 45px;
     border-radius: 4px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
 }
 
 .widget.paypalbuynow .widget.button.paypal,
 .widget.tweet a,
 .widget.dropbox button {
     padding: 0 12px 0 40px;
+    line-height: 45px;
 }
 
 input.blog-search-input,
