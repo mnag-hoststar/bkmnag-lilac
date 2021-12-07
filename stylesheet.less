@@ -891,7 +891,7 @@ ul {
 .widget.feature {
     width: 100%;
     padding: 0;
-
+    
     @media @tablet {
         padding: 0;
     }
@@ -902,7 +902,7 @@ ul {
 
     .feature-bgimg {
         height: 350px;
-        
+
         @media @tablet {
             height: 320px;
         }
@@ -1093,10 +1093,10 @@ ul {
 }
 
 hr.line {
-   background-color: lighten(@color-swatch5,18%);
-   height: 1px;
-   width: 100%;
-   border: none;
+    background-color: lighten(@color-swatch5,18%);
+    height: 1px;
+    width: 100%;
+    border: none;
 
     .style--light & {
         background-color: darken(@color--light, 25%);
@@ -1113,11 +1113,11 @@ hr.line {
     &.align-left {
         margin: 20px auto 20px 0px;
     }
-    
+
     &.align-center {
         margin: 20px auto;
     }
-    
+
     &.align-right {
         margin: 20px 0px 20px auto;
     }
@@ -1245,7 +1245,7 @@ hr.line {
         p {
             color: @color-swatch5;
             margin-top: 4px;
-
+            
             &:last-child {
                 font-weight: inherit;
             }
@@ -1256,6 +1256,15 @@ hr.line {
                 font-family: @font-swatch5-font-family;
                 line-height: @font-swatch5-line-height;
                 font-size: @font-swatch5-font-size;
+            }
+        }
+
+        span a {
+            text-decoration: none;
+
+            &:hover {
+                color: @color-swatch2;
+                text-decoration: none;
             }
         }
 
@@ -1303,6 +1312,20 @@ hr.line {
                 .style--dark & {
                     color: darken(@color--accent, 15%);
                 }
+            }
+        }
+    
+        time,
+        span,
+        span a {
+            .widget.profile & {
+                color: @color-swatch1;
+            }
+        }
+
+        footer & .twitter span {
+            .widget.profile & {
+                display: inline;
             }
         }
     
@@ -2657,35 +2680,9 @@ button.blog-search-submit-button,
 	}
 }
 
+// PLACEHOLDER CSS
 
-/* PLACEHOLDER CSS */
-::-webkit-input-placeholder { /* WebKit browsers */
-    .style--light & {
-        color: @contrast--light;
-    }
-
-    .style--accent & {
-        color: @contrast--accent;
-    }
-
-    .style--dark & {
-        color: @contrast--dark;
-    }
-}
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    .style--light & {
-        color: @contrast--light;
-    }
-
-    .style--accent & {
-        color: @contrast--accent;
-    }
-
-    .style--dark & {
-        color: @contrast--dark;
-    }
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
+::-webkit-input-placeholder {
     .style--light & {
         color: @contrast--light;
     }
@@ -2699,7 +2696,35 @@ button.blog-search-submit-button,
     }
 }
 
-:-ms-input-placeholder { /* Internet Explorer 10+ */
+:-moz-placeholder {
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
+}
+
+::-moz-placeholder {
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
+}
+
+:-ms-input-placeholder {
     .style--light & {
         color: @contrast--light;
     }
