@@ -2598,7 +2598,7 @@ footer .widget.profile .bk-profile-socialicons span a {
 	}
 }
 
-// Forms
+// FORMS
 
 input,
 textarea,
@@ -2675,25 +2675,7 @@ input {
 	}
 }
 
-.ecom-product-go-to-checkout-btn {
-	font-family: @font-swatch7-font-family;
-	line-height: 40px;
-	padding: 0;
-	margin: 0;
-	min-height: 40px;
-	font-size: @font-swatch7-font-size;
-	font-weight: @font-swatch7-font-weight;
-	-webkit-font-smoothing: inherit;
-
-	&:hover {
-		text-decoration: none;
-	}
-}
-
-.widget.tweet a {
-	display: inline-block;
-	margin: 0;
-}
+// Buttons
 
 .widget.button button,
 .btn,
@@ -2708,21 +2690,21 @@ button.btn,
 a.contentgroup__link {
 	background-color: @font-swatch7-background-color-hover;
 	.transition(all, 0.5s, ease);
+	padding: 0 12px;
 
 	.style--light & {
-		  background-color: @color--accent;
-		  color: @contrast--accent;
-		}
+		background-color: @color--accent;
+		color: @contrast--accent;
+	}
 
-		.style--accent & {
-		  background-color: @color--dark;
-		  color: @contrast--dark;
-		}
+	.style--accent & {
+		background-color: @color--dark;
+		color: @contrast--dark;
+	}
 
-		.style--dark & {
-		  background-color: @color--accent;
-		  color: @contrast--accent;
-		}
+	.style--dark & {
+		background-color: @color--accent;
+		color: @contrast--accent;
 	}
 	
 	&:hover {
@@ -2746,20 +2728,6 @@ a.contentgroup__link {
 	}
 }
 
-input,
-.widget.tweet a,
-.widget.profile form fieldset input,
-.widget.ecombasket .ecombasket-pull,
-.widget.paypalbuynow .widget.button.paypal,
-.widget.ecomproduct .ecom-product .ecom-product-go-to-checkout-btn,
-.widget.ecombasketsummary .basket-summary-submit,
-button {
-	line-height: 1.2em;
-	height: auto;
-	min-height: 45px;
-	border-radius: 4px;
-}
-
 .widget.tweet a,
 .widget.dropbox button,
 .widget.paypalbuynow .widget.button.paypal {
@@ -2767,10 +2735,9 @@ button {
 	line-height: 45px;
 }
 
-input.blog-search-input,
-.widget.signupform input,
-.widget.profile form fieldset input {
-	margin-right: 0;
+.widget.tweet a {
+	display: inline-block;
+	margin: 0;
 }
 
 button.blog-search-submit-button,
@@ -2798,6 +2765,70 @@ button.blog-search-submit-button,
 		background-color: darken(@color--accent, 10%);
 		color: @contrast--accent;
 	}
+}
+
+.widget.contactform button,
+.widget.contactform button.btn,
+.widget.advancedcontactform button,
+.widget.advancedcontactform button.btn {
+	padding: 0 20px;
+	margin-top: 10px;
+
+	@media @mobile {
+		width: 100%;
+	}
+}
+.ecom-product-go-to-checkout-btn {
+	font-family: @font-swatch7-font-family;
+	line-height: 40px;
+	padding: 0;
+	margin: 0;
+	min-height: 40px;
+	font-size: @font-swatch7-font-size;
+	font-weight: @font-swatch7-font-weight;
+	-webkit-font-smoothing: inherit;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.widget button.btn span {
+	color: @font-swatch7-color;
+
+	.style--light & {
+		color: @contrast--accent;
+	}
+
+	.style--accent & {
+		color: @contrast--dark;
+	}
+
+	.style--dark & {
+		color: @contrast--accent;
+	} 
+}
+
+// Inputs
+
+input,
+.widget.tweet a,
+.widget.profile form fieldset input,
+.widget.ecombasket .ecombasket-pull,
+.widget.paypalbuynow .widget.button.paypal,
+.widget.ecomproduct .ecom-product .ecom-product-go-to-checkout-btn,
+.widget.ecombasketsummary .basket-summary-submit,
+button {
+	line-height: 1.2em;
+	height: auto;
+	min-height: 45px;
+	border-radius: 4px;
+}
+
+input.blog-search-input,
+.widget.signupform input,
+.widget.profile form fieldset input {
+	margin-right: 0;
 }
 
 .widget.contactform,
@@ -2843,17 +2874,7 @@ button.blog-search-submit-button,
 	}
 }
 
-.widget.contactform button,
-.widget.contactform button.btn,
-.widget.advancedcontactform button,
-.widget.advancedcontactform button.btn {
-	padding: 0 20px;
-	margin-top: 10px;
-
-	@media @mobile {
-		width: 100%;
-	}
-}
+// Profile Form
 
 .widget.profile {
 	form {
@@ -2883,6 +2904,8 @@ button.blog-search-submit-button,
 		}
 	}
 }
+
+// Signup Form
 
 .widget.signupform fieldset {
 	.form-group {
@@ -2935,6 +2958,8 @@ button.blog-search-submit-button,
 	}
 }
 
+// Blog Search
+
 .widget.blogsearch {
 	margin: 10px 0;
 
@@ -2969,16 +2994,6 @@ button.blog-search-submit-button,
 		@media @mobile {
 			margin-top: 10px;
 			width: 100%;
-		}
-	}
-}
-
-.widget.button {
-	button.btn {
-		padding: 0 12px;
-
-		&:hover {
-			background-color: @font-swatch7-background-color-hover;
 		}
 	}
 }
@@ -3018,7 +3033,7 @@ button.blog-search-submit-button,
 	}
 }
 
-// PLACEHOLDER CSS
+// PLACEHOLDERS
 
 ::-webkit-input-placeholder {
 	.style--light & {
