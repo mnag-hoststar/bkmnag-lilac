@@ -98,6 +98,7 @@ blockquote:before {
 	line-height:@font-swatch5-line-height;
 	letter-spacing: @font-swatch5-letter-spacing;
 	font-size: @font-swatch5-font-size;
+	word-break: break-word;
 
 	.style--light & {
 		color: fade(@contrast--light, 75%);
@@ -193,14 +194,38 @@ blockquote {
 	color: @font-swatch5-color;
 	word-break: break-word;
 
+	.style--light & {
+		border-color: @contrast--light;
+	}
+
+	.style--accent & {
+		border-color: @contrast--accent;
+	}
+
+	.style--dark & {
+		border-color: @contrast--dark;
+	}
+
 	&:before {
 		font-family: georgia;
-		color: @color-swatch2;
+		color: fade(@font-swatch5-color, 60%);
 		content: open-quote;
 		font-size: 4em;
 		line-height: 0.1em;
 		margin-right: 0.1em;
 		vertical-align: -0.4em;
+
+		.style--light & {
+			border-color: fade(@contrast--light, 60%);
+		}
+	
+		.style--accent & {
+			border-color: fade(@contrast--accent, 60%);
+		}
+	
+		.style--dark & {
+			border-color: fade(@contrast--dark, 60%);
+		}
 	}
 }
 
