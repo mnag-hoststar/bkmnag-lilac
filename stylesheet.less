@@ -2731,6 +2731,12 @@ select {
 	}
 }
 
+input {
+	@media @mobile {
+		width: 100%;
+	}
+}
+
 textarea {
 	height: auto;
 }
@@ -2751,14 +2757,6 @@ select {
 	option {
 		background-color: @color-swatch1;
 		color: @font-swatch5-color;
-	}
-}
-
-// Inputs
-
-input {
-	@media @mobile {
-		width: 100%;
 	}
 }
 
