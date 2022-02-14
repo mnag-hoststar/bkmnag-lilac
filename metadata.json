@@ -1,8 +1,8 @@
 {
-    "name":"Lilac",
-    "thumbnail":"thumbnail.png",
-    "screenshot":"lilac-screenshot.jpg",
-    "templateType":"standard",
+    "name": "Lilac",
+    "thumbnail": "images/thumbnail.png",
+    "screenshot": "images/screenshot.jpg",
+    "templateType": "standard",
     "versionTenCompatible": 1,
     "pageTypes": ["home"],
     "tags": {
@@ -10,6 +10,11 @@
     "es": ["minimalista", "limpio", "fotografico", "vintage", "moderno", "oscuro", "estudio", "website", "creativo", "elegante", "profesional", "unico", "floral", "sans-serif"],
     "br": ["minimalista", "limpo", "fotografia", "vintage", "moderno", "escuro", "estúdio", "website", "criativo", "elegante", "profissional", "único", "floral", "sans-serif"]
     },
+	"images": [
+		"images/gallery/1.jpg",
+		"images/gallery/2.jpg",
+		"images/gallery/3.jpg"
+	],
     "colorSwatches":
     {
         "Swatch 1": {
