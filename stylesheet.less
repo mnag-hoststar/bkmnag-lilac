@@ -17,6 +17,27 @@
 	appearance: @appearance;
 }
 
+// BASEKIT ELEMENTS
+
+.top-level-overlay button.top-level-overlay__delete-button,
+.row-overlay__delete-button,
+.top-level-overlay button.top-level-overlay__arrangement-button--up,
+.row-overlay__arrangement-button--up,
+.top-level-overlay button.top-level-overlay__arrangement-button--down,
+.row-overlay__arrangement-button--down, .row-overlay__edit-button {
+	background: transparent !important;
+}
+
+.row-overlay__edit-button {
+	background: #fff !important;
+}
+
+.is-dropdown-open .row-overlay__edit-button .row-overlay__edit-button-icon,
+.is-setting-open .row-overlay__edit-button .row-overlay__edit-button-icon {
+	left: auto !important;
+    top: auto !important;
+}
+
 // MAIN
 
 body {
@@ -1926,169 +1947,6 @@ hr.line {
 	width: 100%;
 }
 
-// MENU 
-
-.widget.menusections {
-	text-align: center;
-	padding: 0;
-	min-height: 30px;
-
-	@media @desktop-small {
-		width: 100%;
-		margin: 0 auto;
-		margin-top: 1.5em;
-	}
-
-	@media @mobile-larger {
-		padding: 0;
-		margin-top: 0;
-		padding: 0 0 0;
-	}
-
-	ul {
-		display: table;
-		width: 100%;
-		margin: 0 auto;
-		list-style: none;
-		padding: 0;
-		
-		li {
-			display: inline-block;
-			padding: 1em 0.8em;
-			margin: 0;
-
-			@media @mobile-larger {
-				width: 100%;
-				border-bottom: 1px solid fade(@color-swatch4, 20%);
-			}
-		}
-	}
-}
-
-.widget.menusections {
-	ul {
-		border: 2px solid lighten(@font-swatch5-color, 40%);
-		padding: 0;
-		text-align: center;
-
-		li {
-			padding: 1em;
-			margin: 0;
-
-			a {
-				font-family: @font-swatch7-font-family;
-				font-size: @font-swatch7-font-size;
-				font-weight: @font-swatch7-font-weight;
-				line-height: @font-swatch7-line-height;
-			}
-		}
-	}
-}
-
-.menu {
-	.menu-item-image-wrap {
-		background-size: cover;
-		background-repeat: no-repeat;
-		height: 180px;
-		margin: 0.25em 0 0.75em;
-		background-position: center;
-
-		img {
-			display: none;
-		}
-	}
-
-	.menu-header {
-		margin: 2em 0 2.5em;
-		text-align: center;
-
-		h1 {
-			font-size: bkscale(@font-swatch2-font-size, 1.1);
-			padding-bottom: 0;
-		}
-
-		p {
-			color: lighten(@font-swatch5-color, 15%);
-			font-size: @font-swatch4-font-size;
-			line-height: @font-swatch4-line-height;
-			padding: 5px 0 0;
-		}
-	}
-
-	.menu-subsection {
-		padding: 0;
-
-		.menu-subsection-header {
-			padding: 20px 0;
-
-			h2 {
-				color: @color-swatch4;
-			}
-		}
-	}
-
-	.menu-item-nutritional-title {
-		font-size: bkscale(@font-swatch5-font-size, 0.96);
-
-		&:before {
-			content: "\2014";
-			color: lighten(@font-swatch5-color, 35%);
-			display: block;
-			padding-bottom: 20px;
-			padding-top: 8px;
-			line-height: 8px;
-		}
-	}
-
-	.menu-item-nutritional-prop {
-		font-size: bkscale(@font-swatch5-font-size, 0.9);
-		line-height: @font-swatch5-line-height;
-	}
-
-	.menu-section-item-dietary-props .dietary-icon {
-		background: fade(@color-swatch5, 15%);
-		font-size: bkscale(@font-swatch5-font-size, 0.82);
-		padding: 4px 10px;
-		margin-top: 15px;
-	}
-
-	.menu-subsection-promoted,
-	.menu-items li.menu-item-promoted {
-		background-color: lighten(@color-swatch5, 30%);
-		padding: 2em;
-
-		@media @mobile {
-			padding: 1em;
-		}
-
-		ol {
-			padding-bottom: 0;
-		}
-
-		.menu-subsection-header {
-			padding: 20px 0 12px;
-
-			h2 {
-				margin-bottom: 0;
-			}
-		}
-	}
-
-	.menu-subsection-promoted li.menu-item-promoted {
-		background-color: lighten(@color-swatch5, 25%);
-	}
-
-	.menu-subsection-name {
-		color: @font-swatch2-color;
-		margin-bottom: 0.25em;
-	}
-
-	.menu-item-price p {
-		color: @color-swatch3;
-		font-size: bkscale(@font-swatch5-font-size, 1.12);
-	}
-}
-
 // E-COMMERCE
 
 // Categories
@@ -2756,15 +2614,18 @@ textarea {
 
 .select-wrap {
 	position: relative;
-	max-width: 50%;
 
-	@media @mobile {
-		max-width: 100%;
-	}
+    .advancedcontactform & {
+        max-width: 50%;
 
-	.responsivecolumns & {
-		max-width: 100%;
-	}
+        @media @tablet {
+            max-width: 100%;
+        }
+    
+        .responsivecolumns & {
+            max-width: 100%;
+        }
+    }
 }
 
 select {
