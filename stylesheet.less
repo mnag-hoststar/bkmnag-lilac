@@ -132,28 +132,26 @@ blockquote:before {
 
 // Normal Text
 
-.widget.content,
-.widget.content.in-editing {
-	.wysihtml-editor-content,
-	.embed-content {
-		font-size: @font-swatch5-font-size !important;
-		line-height: @font-swatch5-line-height !important;
+.widget.content .wysihtml-editor-content,
+.widget.embed .embed-content,
+.widget.content.in-editing .wysihtml-editor-content {
+	font-size: @font-swatch5-font-size !important;
+	line-height: @font-swatch5-line-height !important;
+
+	&, p, span, small, pre, code,
+	table, th, td {
+		color: @font-swatch5-color;
 	
-		&, p, span, small, pre, code,
-		table, th, td {
+		.style--light & {
 			color: @font-swatch5-color;
-		
-			.style--light & {
-				color: @font-swatch5-color;
-			}
-		
-			.style--accent & {
-				color: @contrast--accent;
-			}
-		
-			.style--dark & {
-				color: @contrast--dark;
-			}
+		}
+	
+		.style--accent & {
+			color: @contrast--accent;
+		}
+	
+		.style--dark & {
+			color: @contrast--dark;
 		}
 	}
 }
@@ -263,7 +261,7 @@ blockquote {
 	
 			&:before {
 				position: absolute;
-				content: "\2013";
+				content: '\2013';
 				left: -2em;
 			}
 		}
@@ -304,6 +302,7 @@ blockquote {
 table {
 	overflow: auto;
 	width: 100%;
+	max-width: 100%;
 	border: none;
 	border-collapse: separate;
 	border-spacing: 0;
@@ -590,13 +589,13 @@ tr:last-child td {
 
 	.language-selector.language-selector--dropdown & {
 		&:before {
-			content: "";
+			content: '';
 			display: block;
 			height: @language-line-height;
 		}
 
 		&:after {
-			content: "";
+			content: '';
 			display: block;
 			height: @language-padding*2;
 		}
@@ -718,7 +717,7 @@ tr:last-child td {
 	&--current {
 		&:after {
 			.language-selector.language-selector--dropdown & {
-				content: "\25be";
+				content: '\25be';
 				top: 50%;
 				right: 0;
 				margin-top: -(@language-line-height / 4);
@@ -1036,7 +1035,7 @@ tr:last-child td {
 		
 		&:after {
 			@media @tablet {
-				content: "";
+				content: '';
 				position: absolute;
 				top: 16px;
 				right: 7px;
@@ -1147,11 +1146,12 @@ tr:last-child td {
 			
 				> .text {
 					padding-right: 40px;
+					word-break: break-word;
 		
 					// Folder Arrow
 				
 					&:after {
-						content: "";
+						content: '';
 						position: absolute;
 						right: 20px;
 						top: 50%;
@@ -1735,7 +1735,7 @@ hr.line {
 
 		.btn-prev {
 			&:after {
-				content: "\2190";
+				content: '\2190';
 				color: @font-swatch7-color;
 				top: 7px;
 
@@ -1747,7 +1747,7 @@ hr.line {
 
 		.btn-next {
 			&:after {
-				content: "\2192";
+				content: '\2192';
 				color: @font-swatch7-color;
 				top: 7px;
 
@@ -2209,6 +2209,13 @@ hr.line {
 	}
 }
 
+.widget.ecomproductslist .ecom-productslist-image,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap .ecom-featuredproducts-product .ecom-featuredproducts-image {
+	display: none;
+    height: 100%;
+    margin: 0 auto;
+}
+
 .widget.ecombasket .ecombasket-pull {
 	margin: 0 0 15px;
 	font-weight: @font-swatch7-font-weight;
@@ -2230,6 +2237,10 @@ hr.line {
 	margin: 0 0 60px;
 	padding: 0 10px;
 
+	a:hover {
+		text-decoration: none;
+	}
+
 	@media @tablet {
 		width: 100%/2;
 	}
@@ -2250,6 +2261,7 @@ hr.line {
 		button {
 			margin-bottom: 1em;
 			text-align: center;
+			min-width: 250px;
 		
 			@media @mobile {
 				width: 100%;
@@ -2258,6 +2270,33 @@ hr.line {
 			&:before {
 				float: none;
 			}
+		}
+	}
+
+	.ecom-product-tag,
+	.ecom-product-category {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 1em;
+
+		&:after {
+			content: ':\00a0';
+			order: 0;
+			display: inline-block;
+		}
+	}
+
+	.store-category-link,
+	.ecom-product-tag-link {
+		font-weight: 300;
+		order: 1;
+
+		&:after {
+			content: ',\00a0';
+		}
+
+		&:last-child::after {
+			content: none;
 		}
 	}
 }
@@ -2648,7 +2687,7 @@ button.button,
 .widget.filedownload button.btn,
 .widget.paypalbuynow .widget.button.paypal,
 .widget.socialicons span a,
-footer.bk-footer .widget.profile .bk-profile-socialicons span a,
+.widget.profile .bk-profile-socialicons span a,
 .widget.feature .feature-bgimg .content button,
 .userregistration fieldset .userregistrationbtn,
 .widget.yelpreview .review-body .review-link a,
@@ -2748,11 +2787,12 @@ form.blog-search-form .form-group button,
 .widget.dropbox button span,
 .widget.filedownload button.btn {
 	&:before {
-		float: left;
-		padding-right: 0.5em;
+        position: relative;
+        top: 0.1em;
+		padding-right: 0.25em;
 		background-image: none;
 		font-family:'FontAwesome';
-		font-size: 1.5em;
+		font-size: 1.25em;
 	}
 }
 
@@ -2779,7 +2819,7 @@ form.blog-search-form .form-group button,
 }
 
 .widget.socialicons,
-footer.bk-footer .widget.profile .bk-profile-socialicons {
+.widget.profile .bk-profile-socialicons {
 	span {
 		a {
 			display: flex;
@@ -2814,7 +2854,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons {
 	}
 }
 
-footer.bk-footer .widget.profile .bk-profile-socialicons span a {
+.widget.profile .bk-profile-socialicons span a {
 	background-color: darken(@color-swatch7, 5%);
 
 	&:hover {
@@ -3092,6 +3132,8 @@ input.blog-search-input,
 		cursor: pointer;
 		padding-left: 2em;
 		margin-bottom: 0;
+		line-height: floor(@font-swatch5-line-height*0.8+2);
+		font-size: @font-swatch5-font-size;
 		word-break: break-word;
 		text-align: left;
 		text-transform: none;
@@ -3100,7 +3142,7 @@ input.blog-search-input,
 			font-family: @font-swatch5-font-family;
 			font-weight: @font-swatch5-font-weight;
 			font-size: @font-swatch5-font-size;
-			line-height: @font-swatch5-line-height;
+			line-height: floor(@font-swatch5-line-height*0.8+2);
 			letter-spacing: @font-swatch5-letter-spacing;
 		}
 			
@@ -3108,7 +3150,7 @@ input.blog-search-input,
 		&:after {
 			cursor: pointer;
 			display: block;
-			content: " ";
+			content: ' ';
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -3116,7 +3158,6 @@ input.blog-search-input,
 
 		&:before {
 			min-width: 0;
-			margin-top: floor(@font-swatch5-line-height*0.1);
 			height: floor(@font-swatch5-line-height*0.8);
 			width: floor(@font-swatch5-line-height*0.8);
 			background-color: @color-swatch1;
@@ -3150,7 +3191,6 @@ input.blog-search-input,
 			border-radius: 50%;
 			background-color: @font-swatch7-background-color;
 			border: 1px solid @font-swatch7-background-color;
-			margin-top: floor(@font-swatch5-line-height*0.1);
 			height: floor(@font-swatch5-line-height*0.8);
 			transform: scale(50%);
 
@@ -3174,7 +3214,7 @@ input.blog-search-input,
 	.label--checkbox,
 	label[for*="input--terms"] {
 		&:after {
-			margin-top: floor(@font-swatch5-line-height*-0.2+1);
+			margin-top: floor(@font-swatch5-line-height*-1.2/4);
 			height: floor(@font-swatch5-line-height*1.2);
 			border: 1px solid transparent;
 			box-shadow: -6px -6px 0 0 inset @font-swatch7-background-color;
