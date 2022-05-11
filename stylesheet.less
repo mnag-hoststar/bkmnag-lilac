@@ -225,7 +225,6 @@ ul, ol, li,
 dd, pre, code,
 label,
 .label,
-.contentgroup__body,
 .contactform label, 
 .advancedcontactform label,
 .twitter ul li time,
@@ -435,8 +434,7 @@ blockquote {
 
 table {
 	overflow: auto;
-	width: 100% !important;
-	max-width: 100%;
+	min-width: 100%;
 	border: none;
 	border-collapse: separate;
 	border-spacing: 0;
@@ -529,12 +527,15 @@ td {
 		padding: 0 0.5em;
 		border-bottom: none;
 		width: 100% !important;
+		max-width: 100%;
 	}
 	
 	.responsivecolumns & {
 		display: block;
 		padding: 0 0.5em;
 		border-bottom: none;
+		width: 100% !important;
+		max-width: 100%;
 	}
 	
 	&:first-child {
@@ -1375,14 +1376,16 @@ tr:last-child td {
 						> a {
 							display: block;
 							padding: 0;
-						}
 
-						.text {
-							color: @font-swatch6-color;
-
-							&:hover {
-								background-color: @color-swatch3;
-								color: lighten(@color-swatch2, 20%);
+							.text {
+								overflow: visible;
+								word-break: break-word;
+								color: @font-swatch6-color;
+	
+								&:hover {
+									background-color: @color-swatch3;
+									color: lighten(@color-swatch2, 20%);
+								}
 							}
 						}
 
@@ -2414,30 +2417,32 @@ hr.line {
 		}
 	}
 
-	.ecom-product .btn.ecom-product-add-to-cart-btn,
-	.ecom-product a.ecom-product-go-to-checkout-btn {
-		margin: 20px 0 0;
-		min-width: 250px;
-	}
+	.ecom-product {
+		.btn.ecom-product-add-to-cart-btn,
+		a.ecom-product-go-to-checkout-btn {
+			margin: 20px 0 0;
+			min-width: 250px;
+		}
 
-	.ecom-product .btn.ecom-product-add-to-cart-btn .text:before {
-		content: "\f07a";
-		display: inline-block;
-		margin: 0 0.5em 0 0;
-		font-family: 'FontAwesome';
-		line-height: 1em;
-		font-size: 1.2em;
-	}
-
-	.ecom-product .ecom-product-cattag .ecom-product-tag,
-	.ecom-product .ecom-product-cattag .ecom-product-category {
-		display: flex;
-		flex-wrap: wrap;
-
-		&:after {
-			content: ':\00a0';
-			order: 0;
+		.btn.ecom-product-add-to-cart-btn .text:before {
+			content: "\f07a";
 			display: inline-block;
+			margin: 0 0.5em 0 0;
+			font-family: 'FontAwesome';
+			line-height: 1em;
+			font-size: 1.2em;
+		}
+
+		.ecom-product-cattag .ecom-product-tag,
+		.ecom-product-cattag .ecom-product-category {
+			display: flex;
+			flex-wrap: wrap;
+
+			&:after {
+				content: ':\00a0';
+				order: 0;
+				display: inline-block;
+			}
 		}
 	}
 
@@ -2836,6 +2841,7 @@ form.blog-search-form .form-group button,
 	display: inline-block;
 	padding: 10px 20px;
 	min-height: 45px;
+	height: auto !important;
 	background-color: @font-swatch7-background-color;
 	font-family: @font-swatch7-font-family;
 	font-weight: @font-swatch6-font-weight;
@@ -2962,6 +2968,17 @@ form.blog-search-form .form-group button,
 	padding-left: 3.2em;
     background-size: 1.2em;
     background-position: 1.25em center;
+}
+
+.widget.filedownload div {
+	@media @mobile {
+		float: none;
+	}
+
+	span.file-name {
+		display: block;
+		margin: 0.5em 0;
+	}
 }
 
 // Social Icons
@@ -3220,6 +3237,7 @@ input.blog-search-input,
 			width: floor(@font-swatch5-line-height*0.8);
 			background-color: @color-swatch1;
 			border: 1px solid @font-swatch7-background-color;
+			border-radius: 0;
 
 			.style--light & {
 				border-color: @font-swatch7-background-color;
