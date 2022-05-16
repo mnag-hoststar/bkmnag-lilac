@@ -375,6 +375,10 @@ blockquote {
 			color: fade(@contrast--dark, 60%);
 		}
 	}
+
+	&:after {
+		display: none;
+	}
 }
 
 // Unordered and Ordered List
@@ -1810,7 +1814,7 @@ hr.line {
 			}
 
 			&.title + .description {
-				padding: 0 15px 10px;
+				padding: 0 15px 15px;
 				margin-top: -10px;
 			}
 		}
@@ -1850,10 +1854,6 @@ hr.line {
 				line-height: 50px;
 				text-align: center;
 				letter-spacing: normal;
-
-				.style--light & {
-					color: @font-swatch7-background-color;
-				}
 			}
 		}
 		
@@ -2157,6 +2157,18 @@ hr.line {
 				letter-spacing: @font-swatch2-letter-spacing;
 				text-decoration: none;
 				color: @font-swatch2-color;
+	
+				.style--light & {
+					color: @font-swatch2-color;
+				}
+			
+				.style--accent & {
+					color: @contrast--accent;
+				}
+			
+				.style--dark & {
+					color: @contrast--dark;
+				}
 
 				&:hover {
 					text-decoration: underline;
@@ -2242,10 +2254,6 @@ hr.line {
 				width: 100%;
 				padding: 5px 0;
 			}
-		}
-
-		a span {
-			padding-left: 0.25em;
 		}
 	}
 }
@@ -2717,6 +2725,7 @@ select {
 	padding: 7px 12px;
 	height: auto;
 	min-height: 45px;
+    height: auto !important;
 	color: darken(@font-swatch5-color, 5%);
 
 	.style--light & {
@@ -2841,7 +2850,7 @@ form.blog-search-form .form-group button,
 	display: inline-block;
 	padding: 10px 20px;
 	min-height: 45px;
-	height: auto !important;
+	height: auto;
 	background-color: @font-swatch7-background-color;
 	font-family: @font-swatch7-font-family;
 	font-weight: @font-swatch6-font-weight;
@@ -2876,7 +2885,6 @@ form.blog-search-form .form-group button,
 	&:hover {
 		.transition(all, 0.5s, ease);
 		background-color: @font-swatch7-background-color-hover;
-		padding: 10px 20px;
 	
 		.style--light & {
 			background-color: @font-swatch7-background-color-hover;
@@ -2927,29 +2935,10 @@ form.blog-search-form .form-group button,
 
 .widget.tweet a,
 .widget.clicktocall a,
-.widget.dropbox button,
-.widget.filedownload button.btn,
-.widget.paypalbuynow .widget.button.paypal {
-	&, &:hover, &:focus {
-		background-repeat: no-repeat;
-		background-position: 1em;
-		background-size: 1.5em;
-	}
-}
-
-.widget.tweet a,
-.widget.clicktocall a,
-.widget.dropbox button,
-.widget.filedownload button.btn {
-	&, &:hover, &:focus {
-		background-image: none;
-	}
-}
-
-.widget.tweet a,
-.widget.clicktocall a,
 .widget.dropbox button span,
 .widget.filedownload button.btn {
+	background-image: none;
+
 	&:before {
 		position: relative;
 		top: 0.1em;
@@ -3043,7 +3032,7 @@ input.blog-search-input,
 .widget.contactform,
 .widget.advancedcontactform {
 	.form-group {
-		margin-bottom: 1.5em;
+		margin-bottom: 1em;
 	}
 
 	label {
