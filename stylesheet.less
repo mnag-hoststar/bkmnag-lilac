@@ -1357,8 +1357,10 @@ tr:last-child td {
 					text-overflow: inherit;
 
 					@media @tablet {
-						position: static;
 						display: none;
+						position: static;
+						max-width: none;
+						min-width: auto;
 						padding: 0;
 						max-width: 100%;
 						background-color: darken(@color-swatch7, 5%);
@@ -1902,6 +1904,8 @@ hr.line {
 	// Slideshow Controls
 
 	.slideshow-widget-controls {
+		margin-bottom: 20px;
+		
 		.dot {
 			width: 9px;
 			height: 9px;
@@ -2770,7 +2774,7 @@ select {
 }
 
 textarea {
-	height: auto;
+	min-height: 100px;
 }
 
 // Dropdown
@@ -2835,6 +2839,7 @@ button.button,
 .advancedcontactform button.btn,
 .widget.tweet a,
 .widget.clicktocall a,
+.widget.clicktocall a:hover,
 .widget.dropbox button,
 .widget.filedownload button.btn,
 .widget.paypalbuynow .widget.button.paypal,
