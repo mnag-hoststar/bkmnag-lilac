@@ -2227,7 +2227,7 @@ hr.line {
 .widget.ecomcategorieslist {
 	ul.product-category-items {
 		list-style: none;
-		padding: 0 10px;
+		padding: 0;
 		margin: 0 auto 1em;
 		display: flex;
 		max-width: 800px;
@@ -2243,7 +2243,7 @@ hr.line {
 
 		li {
 			width: 100%/3;
-			padding: 5px 10px;
+			padding: 5px 20px 5px 0;
 
 			@media @tablet {
 				width: 100%/2;
@@ -2330,6 +2330,10 @@ hr.line {
 	
 				.responsivecolumns & {
 					margin-bottom: 0;
+					width: 100%;
+				}
+
+				&.productlist-search {
 					width: 100%;
 				}
 			}
